@@ -16,3 +16,9 @@ pygmentscodefencesguesssyntax = true
 #  description = "where dream beagins"
   keywords = "web3"
 #  avatarurl = "https://ipfs.infura.io/ipfs/QmNdYoMNd6BTGv5dtnYKD5bCwkfQDDk3Mc8Gv6E3ZvL8yK"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
