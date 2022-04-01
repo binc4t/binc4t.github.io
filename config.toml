@@ -17,6 +17,12 @@ pygmentscodefencesguesssyntax = true
   keywords = "web3"
 #  avatarurl = "https://ipfs.infura.io/ipfs/QmNdYoMNd6BTGv5dtnYKD5bCwkfQDDk3Mc8Gv6E3ZvL8yK"
 
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
 # Menu links
 [[menu.main]]
   name = "Blog"
