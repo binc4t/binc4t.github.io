@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>where dream begins!</title><link>https://anccy.github.io/</link><description>Recent content on where dream begins!</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 02 Apr 2022 00:15:03 +0800</lastBuildDate><atom:link href="https://anccy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>刷题日记</title><link>https://anccy.github.io/posts/rp-diary/</link><pubDate>Sat, 02 Apr 2022 00:15:03 +0800</pubDate><guid>https://anccy.github.io/posts/rp-diary/</guid><description>4.2 二分搜索
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>where dream begins!</title><link>https://anccy.github.io/</link><description>Recent content on where dream begins!</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 02 Apr 2022 00:15:03 +0800</lastBuildDate><atom:link href="https://anccy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>刷题日记</title><link>https://anccy.github.io/posts/rp-diary/</link><pubDate>Sat, 02 Apr 2022 00:15:03 +0800</pubDate><guid>https://anccy.github.io/posts/rp-diary/</guid><description>4.1 二分搜索
 704. Binary Search
 278. First Bad Version
 35. Search Insert Position
-4.3 双指针&amp;amp;矩阵搜索
+4.2 双指针&amp;amp;矩阵搜索
 #3 无重复字符的最长子串 #19 删除链表的倒数第 N 个结点
 #876 链表的中间结点
 #557 反转字符串中的单词 III
@@ -12,4 +12,7 @@
 #167 两数之和 II - 输入有序数组
 #283 移动零
 #189 轮转数组
-#977 有序数组的平方</description></item></channel></rss>
+#977 有序数组的平方
+4.3 滑动窗口
+#567 字符串的排列
+#3 无重复字符的最长子串</description></item></channel></rss>
