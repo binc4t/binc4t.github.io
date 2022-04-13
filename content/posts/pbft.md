@@ -14,7 +14,8 @@ series = []
 # 参考资料
 [PBFT 论文](https://pmg.csail.mit.edu/papers/osdi99.pdf)  
 [FISCO-BCOS的PBFT介绍](https://fisco-bcos-documentation.readthedocs.io/zh_CN/latest/docs/design/consensus/pbft.html)  
-[Liskov对PBFT的讲解](https://www.youtube.com/watch?v=Uj638eFIWg8)
+[Liskov对PBFT的讲解](https://www.youtube.com/watch?v=Uj638eFIWg8)  
+[What is Tendermint](https://docs.tendermint.com/master/introduction/what-is-tendermint.html)
 
 # 论文笔记
 ## 一些记录
