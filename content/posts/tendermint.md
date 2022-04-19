@@ -1,5 +1,5 @@
 +++ 
-draft = false
+draft = true
 date = 2022-04-15T00:41:31+08:00
 title = "Tendermint笔记"
 description = ""
@@ -19,3 +19,4 @@ Tendermint 是一种区块链的构建工具，或者区块链的开发框架，
 Tendermint Core 将区块链共识协议层和对等网络通信层实现，使得开发者能够不用过分关心复杂的底层实现，而专注于应用层开发。借用[Dan Boneh](https://www.youtube.com/watch?v=V0JdeRzVndI&t=113s)提到的区块链网络分层模型，我认为Tendermint Core实现了下两层的内容，如下图所示。
 
 ![区块链网络分层模型](https://yyypics.oss-cn-beijing.aliyuncs.com/Untitled-2022-04-16-2352.svg)
+
