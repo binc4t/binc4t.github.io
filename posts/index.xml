@@ -6,7 +6,7 @@ Liskov对PBFT的讲解
 What is Tendermint
 论文笔记 一些记录 3f+1 is the minimum number of replicas that allow an asynchronous system to provide the safety and liveness properties when up to f replicas are faulty
 在一个由3f+1个节点构成的系统中，最多有f个恶意节点，才能保证系统的safty和liveness
-This many replicas are needed because it must be possible to proceed after communicating with n-f replicas, since f replicas might be faulty and not responding.</description></item><item><title>刷题记录</title><link>https://anccy.github.io/posts/rp-diary/</link><pubDate>Sat, 02 Apr 2022 00:15:03 +0800</pubDate><guid>https://anccy.github.io/posts/rp-diary/</guid><description>刷题统计 4.1 二分搜索
+This many replicas are needed because it must be possible to proceed after communicating with n-f replicas, since f replicas might be faulty and not responding. However, it is possible that the f replicas that did not respond are not faulty and, therefore, f of those that responded might be faulty.</description></item><item><title>刷题记录</title><link>https://anccy.github.io/posts/rp-diary/</link><pubDate>Sat, 02 Apr 2022 00:15:03 +0800</pubDate><guid>https://anccy.github.io/posts/rp-diary/</guid><description>刷题统计 4.1 二分搜索
 704. Binary Search
 278. First Bad Version
 35. Search Insert Position
@@ -23,4 +23,10 @@ This many replicas are needed because it must be possible to proceed after commu
 #3 无重复字符的最长子串
 #567 字符串的排列
 栈和队列 #232 用栈实现队列
-#20 有效的括号</description></item></channel></rss>
+#20 有效的括号
+链表
+#206 反转链表
+4.4 二叉树
+#236 二叉树的最近公共祖先
+#117 填充每个节点的下一个右侧节点指针 II
+#116 填充每个节点的下一个右侧节点指针</description></item></channel></rss>
