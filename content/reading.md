@@ -6,7 +6,9 @@ layout: reading.html
 # 2023 读书记录
 
 ## 在读
-[自己动手实现Lua](https://book.douban.com/subject/30348061/)  23%  哪个程序员能拒绝自己实现一台虚拟机呢
+[自己动手实现Lua](https://book.douban.com/subject/30348061/)  23%  哪个程序员能拒绝自己实现一台虚拟机呢  
+
+[编写可读代码的艺术](https://book.douban.com/subject/10797189/) 30% 短小精悍
 
 ## 读完
 [Head First JavaScript程序设计](https://book.douban.com/subject/27120520/) 娓娓道来，培养兴趣，入门好书
