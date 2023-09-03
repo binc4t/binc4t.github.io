@@ -23,6 +23,12 @@ pygmentscodefencesguesssyntax = true
   tag = "tags"
   author = "authors"
 
+# 代码高亮
+[markup.highlight]
+style = 'github' # 样式参考 https://swapoff.org/chroma/playground
+[markup.goldmark.renderer]
+  unsafe = true # 默认值不支持在 markdown 中写 html，需改成 true 开启
+
 # Menu links
 [[menu.main]]
   name = "Blog"
@@ -32,3 +38,4 @@ pygmentscodefencesguesssyntax = true
   name = "Reading"
   weight = 2
   url = "reading"
+
