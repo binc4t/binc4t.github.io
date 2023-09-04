@@ -229,7 +229,7 @@ func calculateStartTime(now uint64, bucketLengthInMs uint32) uint64 {
 - 如果相等，那么直接返回这个桶；  
 - 如果桶的startTime反而大，那么只有在并发情况下，且整个窗口只有一个分桶的时候才可能出现  
 
-只有一个分桶的时候才可能出现startTime大于实际值的情况呢？  
+为什么只有一个分桶的时候才可能出现startTime大于实际值的情况呢？  
 因为只有一个分桶的时候，无论怎么算idx，都是会返回idx=0，
 假如starTime是t0，有前后两个时间，分别比t0稍大和稍小，并发下，比t0稍大的那个goroutine更新了这个桶，startTime变更了startTime+bucketLen，那么这时候比t0稍小的goroutine运行到这里就会到这个分枝
 
