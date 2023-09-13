@@ -11,10 +11,10 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-  author = "Anccy"
+  author = "bincat"
   info = "Code for Love"
 #  description = "where dream beagins"
-  keywords = "web3"
+  keywords = "where dream begins"
   avatarurl = "https://yyypics.oss-cn-beijing.aliyuncs.com/99850403.png"
 
 [taxonomies]
