@@ -1,10 +1,10 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Anccy"><meta name=description content="参考资料 PBFT 论文
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="bincat"><meta name=description content="参考资料 PBFT 论文
 FISCO-BCOS的PBFT介绍
 Liskov对PBFT的讲解
 What is Tendermint
 论文笔记 一些记录 3f+1 is the minimum number of replicas that allow an asynchronous system to provide the safety and liveness properties when up to f replicas are faulty
 在一个由3f+1个节点构成的系统中，最多有f个恶意节点，才能保证系统的safty和liveness
-This many replicas are needed because it must be possible to proceed after communicating with n-f replicas, since f replicas might be faulty and not responding. However, it is possible that the f replicas that did not respond are not faulty and, therefore, f of those that responded might be faulty."><meta name=keywords content="web3"><meta name=twitter:card content="summary"><meta name=twitter:title content="pbft笔记"><meta name=twitter:description content="参考资料 PBFT 论文
+This many replicas are needed because it must be possible to proceed after communicating with n-f replicas, since f replicas might be faulty and not responding. However, it is possible that the f replicas that did not respond are not faulty and, therefore, f of those that responded might be faulty."><meta name=keywords content="where dream begins"><meta name=twitter:card content="summary"><meta name=twitter:title content="pbft笔记"><meta name=twitter:description content="参考资料 PBFT 论文
 FISCO-BCOS的PBFT介绍
 Liskov对PBFT的讲解
 What is Tendermint
@@ -26,6 +26,6 @@ One-minute read</span></div></div></header><div><h1 id=参考资料>参考资料
 <a class=heading-link href=#%e8%ae%ba%e6%96%87%e7%ac%94%e8%ae%b0><i class="fa fa-link" aria-hidden=true></i></a></h1><h2 id=一些记录>一些记录
 <a class=heading-link href=#%e4%b8%80%e4%ba%9b%e8%ae%b0%e5%bd%95><i class="fa fa-link" aria-hidden=true></i></a></h2><p><code>3f+1</code> is the minimum number of replicas that allow an asynchronous system to provide the safety and liveness properties when up to <code>f</code> replicas are faulty</p><p>在一个由<code>3f+1</code>个节点构成的系统中，最多有<code>f</code>个恶意节点，才能保证系统的safty和liveness</p><p>This many replicas are needed because it must be possible to proceed after communicating with <code>n-f</code> replicas, since <code>f</code> replicas might be faulty and not responding. However, it is possible that the <code>f</code> replicas that did not respond are not faulty and, therefore, <code>f</code> of those that responded might be faulty. Even so, there must still be enough responses that those from non-faulty replicas outnumber those from faulty ones, i.e., <code>n-2f</code>. Therefore <code>n > 3f</code>.</p><p>解释了<code>3f</code>的原因</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
 2023
-Anccy
+bincat
 ·
 Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.9cf2dbf9b6989ef8eae941ffb4231c26d1dc026bca38f1d19fdba50177d8a9ac.js integrity="sha256-nPLb+baYnvjq6UH/tCMcJtHcAmvKOPHRn9ulAXfYqaw="></script></body></html>
