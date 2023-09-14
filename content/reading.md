@@ -6,6 +6,10 @@ layout: reading.html
 # 2023 读书记录
 
 ## 在读
+
+[Unix环境高级编程](https://book.douban.com/subject/25900403/) APUE 经典名著...  
+    15章 进程间通信 1，2，3
+
 [自己动手实现Lua](https://book.douban.com/subject/30348061/)  23%  哪个程序员能拒绝自己实现一台虚拟机呢  
 
 [编写可读代码的艺术](https://book.douban.com/subject/10797189/) 30% 短小精悍
