@@ -1,0 +1,9 @@
+编译出静态文件:
+hugo
+
+本地部署，包括被标记为draft的文章: 
+hugo server -D 
+
+拉取submodule到本地:
+git submodule init  
+git submodule update  
