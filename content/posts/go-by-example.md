@@ -1,7 +1,7 @@
 ---
 title: "Go by Example"
 date: 2023-12-10T13:36:32+08:00
-draft: true
+draft: false
 ---
 
 # 重归基础

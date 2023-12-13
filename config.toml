@@ -38,4 +38,8 @@ style = 'github' # 样式参考 https://swapoff.org/chroma/playground
   name = "Reading"
   weight = 2
   url = "reading"
+[[menu.main]]
+  name = "About"
+  weight = 3
+  url = "about"
 
