@@ -84,3 +84,7 @@ https://segmentfault.com/a/1190000041634906
 思路：协程池和多路I/O复用
 
 实现参考: https://github.com/bytedance/gopkg/tree/develop/util/gopool
+
+高并发场景下，使用协程池来减少协程创建的开销，减少内存分配的频率
+
+模仿(照抄)上面的gopool实现了一个协程池：https://github.com/binc4t/wpool
