@@ -88,3 +88,11 @@ https://segmentfault.com/a/1190000041634906
 高并发场景下，使用协程池来减少协程创建的开销，减少内存分配的频率
 
 模仿(照抄)上面的gopool实现了一个协程池：https://github.com/binc4t/wpool
+
+主要组件：
+task pool  
+worker pool
+
+1. 从task pool取出task，赋值一个执行func, 放入队列，这里用单向链表实现队列
+2. 查看task队列的task数量，超过阈值则从worker pool中取得一个worker
+3. worker main 循环，不断获取task并执行，如果没有task，则回收这个worker，放入worker pool
