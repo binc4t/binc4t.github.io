@@ -1,7 +1,15 @@
----
-# title: "2023 阅读记录"
-layout: reading.html 
----
++++ 
+draft = false
+date = 2023-12-31T10:06:39+08:00
+title = "2023 阅读记录"
+description = ""
+slug = ""
+authors = []
+tags = []
+categories = []
+externalLink = ""
+series = []
++++
 
 # 2023 读书记录
 
