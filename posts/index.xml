@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on where dream begins!</title><link>https://binc4t.github.io/posts/</link><description>Recent content in Posts on where dream begins!</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 10 Dec 2023 13:36:32 +0800</lastBuildDate><atom:link href="https://binc4t.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Go by Example</title><link>https://binc4t.github.io/posts/go-by-example/</link><pubDate>Sun, 10 Dec 2023 13:36:32 +0800</pubDate><guid>https://binc4t.github.io/posts/go-by-example/</guid><description>重归基础 通过例子来学习Go
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on where dream begins!</title><link>https://binc4t.github.io/posts/</link><description>Recent content in Posts on where dream begins!</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 31 Dec 2023 10:06:39 +0800</lastBuildDate><atom:link href="https://binc4t.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>2023 阅读记录</title><link>https://binc4t.github.io/posts/reading_2023/</link><pubDate>Sun, 31 Dec 2023 10:06:39 +0800</pubDate><guid>https://binc4t.github.io/posts/reading_2023/</guid><description>2023 读书记录 在读 Unix环境高级编程 APUE 经典名著&amp;hellip; 15章 进程间通信 1，2，3
+自己动手实现Lua 23% 哪个程序员能拒绝自己实现一台虚拟机呢
+编写可读代码的艺术 30% 短小精悍
+在刷 MIT 6.824 分布式系统课程 课件 视频
+1章 Introduction 2章 RPC and Threads 3章 GFS 读完 Head First JavaScript程序设计 娓娓道来，培养兴趣，入门好书
+那些想红的年轻人 介绍自媒体商业模式和自媒体从业者心路历程的好书，作者很真诚，值得一看</description></item><item><title>Go by Example</title><link>https://binc4t.github.io/posts/go-by-example/</link><pubDate>Sun, 10 Dec 2023 13:36:32 +0800</pubDate><guid>https://binc4t.github.io/posts/go-by-example/</guid><description>重归基础 通过例子来学习Go
 英文版本：https://gobyexample.com/
 中文版本：https://gobyexample-cn.github.io/
 笔记 迭代和递归 重新感受一下斐波那契数列的递归和迭代算法性能差距
@@ -41,9 +46,4 @@ This many replicas are needed because it must be possible to proceed after commu
 4.4 二叉树
 #236 二叉树的最近公共祖先
 #117 填充每个节点的下一个右侧节点指针 II
-#116 填充每个节点的下一个右侧节点指针</description></item><item><title/><link>https://binc4t.github.io/posts/reading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://binc4t.github.io/posts/reading/</guid><description>2023 读书记录 在读 Unix环境高级编程 APUE 经典名著&amp;hellip; 15章 进程间通信 1，2，3
-自己动手实现Lua 23% 哪个程序员能拒绝自己实现一台虚拟机呢
-编写可读代码的艺术 30% 短小精悍
-在刷 MIT 6.824 分布式系统课程 课件 视频
-1章 Introduction 2章 RPC and Threads 3章 GFS 读完 Head First JavaScript程序设计 娓娓道来，培养兴趣，入门好书
-那些想红的年轻人 介绍自媒体商业模式和自媒体从业者心路历程的好书，作者很真诚，值得一看</description></item></channel></rss>
+#116 填充每个节点的下一个右侧节点指针</description></item></channel></rss>
