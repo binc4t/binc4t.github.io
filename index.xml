@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>where dream begins!</title><link>https://binc4t.github.io/</link><description>Recent content on where dream begins!</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 31 Dec 2023 10:06:39 +0800</lastBuildDate><atom:link href="https://binc4t.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>2023 阅读记录</title><link>https://binc4t.github.io/posts/reading_2023/</link><pubDate>Sun, 31 Dec 2023 10:06:39 +0800</pubDate><guid>https://binc4t.github.io/posts/reading_2023/</guid><description>2023 读书记录 在读 Unix环境高级编程 APUE 经典名著&amp;hellip; 15章 进程间通信 1，2，3
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>where dream begins!</title><link>https://binc4t.github.io/</link><description>Recent content on where dream begins!</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 12 Jan 2024 23:04:41 +0800</lastBuildDate><atom:link href="https://binc4t.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>dnsmasq 使用备忘</title><link>https://binc4t.github.io/posts/dnsmasq/</link><pubDate>Fri, 12 Jan 2024 23:04:41 +0800</pubDate><guid>https://binc4t.github.io/posts/dnsmasq/</guid><description>最近在给手机测试时，想要把手机上对特定域名的请求劫持到Mac上来，就需要用到dnsmasq，把Mac变成一个dns服务器，然后手机的dns服务器地址修改到mac上来。下面做一个配置备忘
+参考：https://blog.niekun.net/archives/1869.html
+省略安装步骤，debian用 apt install，mac用 brew install 即可，下面进行配置
+dnsmasq会按照一定的顺序去进行域名解析
+首先是系统以及自定义的hosts文件： /etc/hosts /etc/hosts.dnsmasq 然后是上游dns server，定义在：resolv.dnsmasq.conf 默认dns server记录在/etc/resolv.conf文件中，既然我们要使用dnsmasq来做dns服务器，那么就应该让dnsmasq能够查询系统原本的dns sever，等于是用dnsmasq做了一个中继
+sudo cp /etc/resolv.conf /etc/resolv.dnsmasq.conf 然后在/etc/resolv.conf文件中，将内容改为
+nameserver 127.0.0.1 这样就把本机的dns server指向了 127.0.0.1，这时候机器的dns请求就会发往127.0.0.1的53端口，dns默认监听端口，也是dnsmasq的监听端口
+然后再在 /etc/dnsmasq.conf 文件中输入配置
+# 监听地址： # 如果只写 127.0.0.1 则只处理本机的 DNS 解析，不写这句默认监听所有网口 # listen-address=127.0.0.1,192.168.8.132 # 指定自定义 hosts 文件： addn-hosts=/etc/hosts.dnsmasq # 指定上游 DNS 服务列表的配置文件 resolv-file=/etc/resolv.dnsmasq.conf # 按照 DNS 列表一个个查询，否则将请求发送到所有 DNS 服务器 strict-order # 表示对下面设置的所有 server 发起查询请求，选择响应最快的服务器的结果 all-servers 这样配置过程就完成了！
+此时本机的dns请求的查询路径就会是
+/etc/hosts -&amp;gt; dnsmasq 然后dnsmasq又会依次检索
+/etc/hosts /etc/hosts.dnsmasq -&amp;gt; resolv.</description></item><item><title>2023 阅读记录</title><link>https://binc4t.github.io/posts/reading_2023/</link><pubDate>Sun, 31 Dec 2023 10:06:39 +0800</pubDate><guid>https://binc4t.github.io/posts/reading_2023/</guid><description>2023 读书记录 在读 Unix环境高级编程 APUE 经典名著&amp;hellip; 15章 进程间通信 1，2，3
 自己动手实现Lua 23% 哪个程序员能拒绝自己实现一台虚拟机呢
 编写可读代码的艺术 30% 短小精悍
 在刷 MIT 6.824 分布式系统课程 课件 视频
