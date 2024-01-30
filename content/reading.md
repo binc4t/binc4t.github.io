@@ -9,6 +9,8 @@ layout: reading.html
 ### 技术
 [《go语言精进之路》](https://book.douban.com/subject/35720728/)
 
+[《rust程序设计语言》](https://kaisery.github.io/trpl-zh-cn/)
+
 ### 非技术 
 [《南方高速》](https://book.douban.com/subject/27079479/) 科塔萨尔的短篇小说集
 
