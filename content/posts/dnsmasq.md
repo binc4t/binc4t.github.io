@@ -52,7 +52,7 @@ addn-hosts=/etc/hosts.dnsmasq
 # 指定上游 DNS 服务列表的配置文件
 resolv-file=/etc/resolv.dnsmasq.conf
 
-# 按照 DNS 列表一个个查询，否则将请求发送到所有 DNS 服务器
+# 按照 DNS 列表一个个查询，不重新排列 DNS server 的顺序
 strict-order
 
 # 表示对下面设置的所有 server 发起查询请求，选择响应最快的服务器的结果
@@ -75,5 +75,8 @@ all-servers
 ```
 
 那么此时我们在 `/etc/hosts` 或者 `/etc/hosts.dnsmasq` 文件中定义一条 host，就可以改变dns解析的结果
+
+重启dnsmasq服务后即可生效
+
 
 不仅是本机的dns查询，因为dnsmasq监听53端口，相当于本机也是一个dns服务器，其他服务器可以向本机进行dns查询，或者把dns服务器地址设置成本机，这在进行手机的dns劫持时很有用处
