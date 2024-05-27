@@ -39,6 +39,8 @@ nameserver 127.0.0.1
 
 这样就把本机的dns server指向了 127.0.0.1，这时候机器的dns请求就会发往127.0.0.1的53端口，dns默认监听端口，也是dnsmasq的监听端口
 
+这里注意，在mac上需要在设置-网络-DNS中修改DNS服务器·
+
 然后再在 `/etc/dnsmasq.conf` 文件中输入配置
 
 ```bash
@@ -61,6 +63,8 @@ all-servers
 
 这样配置过程就完成了！
 
+注意！如果在mac下用homebrew安装的，那么配置文件在`/opt/homebrew/etc/dnsmasq.d/dnsmasq.conf`
+
 此时本机的dns请求的查询路径就会是
 
 ```bash
@@ -70,13 +74,15 @@ all-servers
 然后dnsmasq又会依次检索
 
 ```bash
-
 /etc/hosts  /etc/hosts.dnsmasq -> resolv.dnsmasq.conf
 ```
 
 那么此时我们在 `/etc/hosts` 或者 `/etc/hosts.dnsmasq` 文件中定义一条 host，就可以改变dns解析的结果
 
 重启dnsmasq服务后即可生效
+```
+brew services restart dnsmasq
+```
 
 
 不仅是本机的dns查询，因为dnsmasq监听53端口，相当于本机也是一个dns服务器，其他服务器可以向本机进行dns查询，或者把dns服务器地址设置成本机，这在进行手机的dns劫持时很有用处
