@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>where dream begins!</title><link>https://binc4t.github.io/</link><description>Recent content on where dream begins!</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 24 Feb 2024 17:56:47 +0800</lastBuildDate><atom:link href="https://binc4t.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>使用karabiner实现vim的中英文输入法丝滑切换</title><link>https://binc4t.github.io/posts/vim-switch-cn-en/</link><pubDate>Sat, 24 Feb 2024 17:56:47 +0800</pubDate><guid>https://binc4t.github.io/posts/vim-switch-cn-en/</guid><description>#vim
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>where dream begins!</title><link>https://binc4t.github.io/</link><description>Recent content on where dream begins!</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 01 Jun 2024 23:07:52 +0800</lastBuildDate><atom:link href="https://binc4t.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>DHCP 协议</title><link>https://binc4t.github.io/posts/dhcp/</link><pubDate>Sat, 01 Jun 2024 23:07:52 +0800</pubDate><guid>https://binc4t.github.io/posts/dhcp/</guid><description>新开了一个支线任务：探索Linux Common Port
+本次任务： 端口 描述 67 (UDP) Used by the DHCP server (Dynamic Host Configuration Protocol). 68 (UDP) Used by a DHCP client. 67和68两个端口用于DHCP协议，分别是服务端和客户端
+DHCP是应用层协议，传输层协议使用的是UDP
+什么是DHCP DHCP(Dynamic Host Configurration Protocol)协议，动态路由配置协议，用于动态分配IP
+你走进咖啡厅，用手机连接咖啡厅的公共wifi，此时你的手机将需要被动态分配一个IP，才能用语网络通信，那么这个动态IP由谁负责给你，又是通过什么方式给你呢？
+一般负责动态IP分配的是路由器，而分配动态IP所遵循的协议就是DHCP，下面就是你从连接咖啡厅wifi到分配ip的过程：
+当你的手机连接到咖啡厅的公共WiFi网络时,它会向WiFi路由器发送请求,希望获得一个IP地址以接入互联网。 路由器上运行着DHCP(动态主机配置协议)服务,它负责动态分配IP地址。DHCP服务器会从可用的内网IP地址池中选择一个空闲的IP地址,并将其分配给你的手机。 DHCP服务器把分配的IP地址、子网掩码、默认网关等信息以DHCP协议的方式发送回你的手机。 你的手机收到DHCP服务器的响应后,就可以使用这个动态分配的内网IP地址来接入互联网了。 上面获取动态IP的过程就是DHCP
+DHCP 的具体过程 简单来说，四次通信即可完成。
+(Discover) client -&amp;gt; servers 广播 Hi，当前广播区域内谁可以给我分配一个动态IP？
+(Offer) server A -&amp;gt; client 单播 我可以给你一个动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息
+(Request) client -&amp;gt; servers 广播 我觉得server A 很不错，我要选定server A提供给我的动态IP地址
+(ACK) server A -&amp;gt; client 单播 这里是你的动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息</description></item><item><title>使用karabiner实现vim的中英文输入法丝滑切换</title><link>https://binc4t.github.io/posts/vim-switch-cn-en/</link><pubDate>Sat, 24 Feb 2024 17:56:47 +0800</pubDate><guid>https://binc4t.github.io/posts/vim-switch-cn-en/</guid><description>#vim
 背景 vim从编辑模式退出到普通模式下的时候，需要手动切换到英文输入法，其他编辑器的vim模式同样存在此问题，我想在vim退出编辑模式时自动切换为英文输入法
 实现这个功能有两个思路：
 vim插件 修改键盘映射 vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器的vim模式下使用 这里采用karabiner修改键位映射来实现，karabiner是一个很方便的键位修改软件，我一直在使用，解决此问题的思路是：修改ESC的键盘映射，实现在按下ESC的同时，修改输入法为英文
