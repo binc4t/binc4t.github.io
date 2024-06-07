@@ -1,0 +1,47 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="bincat"><meta name=description content="Port Description 123 (UDP) NTP (Network Time Protocol). 什么是NTP协议 NTP(Network Time Protocol) 网络时间协议，运行在123端口上， 用于时间同步
+NTP 通过分级的方式来组织所有节点，从0到15，共15级，0级是最准确的时间设备，从0级同步时间的设备是1级设备，依次类推
+网络上的设备是一个既做服务器又做客户端的模型，在从其他设备获取时间后，其他设备同样可以从你这里获取时间
+具体linux设备上，可以启动ntpd，ntpd通过ntp协议来同步时钟
+NTP协议的原理 NTP原理简单理解起来就是， 假设A想从B初同步时间，那么需要向B发起请求，B把自己的时间发给A，但是因为网络延迟的原因，B的消息传达给A要过一个单程延迟，因此A需要知道单程延迟是多少
+从A和B的两次通信中，其实就可以估算出网络延迟
+借用此处的图片来说明
+其中
+t1 是客户端发送数据时, 客户端的时间 t2 是服务端收到数据时, 服务器的时间 t3 是服务端发送数据时, 服务器的时间 t4 是客户端收到数据时, 客户端的时间
+利用这四个时间就可以估算出延迟offset
+client就可以用t3 + offset 来校准时间"><meta name=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="NTP 协议"><meta name=twitter:description content="Port Description 123 (UDP) NTP (Network Time Protocol). 什么是NTP协议 NTP(Network Time Protocol) 网络时间协议，运行在123端口上， 用于时间同步
+NTP 通过分级的方式来组织所有节点，从0到15，共15级，0级是最准确的时间设备，从0级同步时间的设备是1级设备，依次类推
+网络上的设备是一个既做服务器又做客户端的模型，在从其他设备获取时间后，其他设备同样可以从你这里获取时间
+具体linux设备上，可以启动ntpd，ntpd通过ntp协议来同步时钟
+NTP协议的原理 NTP原理简单理解起来就是， 假设A想从B初同步时间，那么需要向B发起请求，B把自己的时间发给A，但是因为网络延迟的原因，B的消息传达给A要过一个单程延迟，因此A需要知道单程延迟是多少
+从A和B的两次通信中，其实就可以估算出网络延迟
+借用此处的图片来说明
+其中
+t1 是客户端发送数据时, 客户端的时间 t2 是服务端收到数据时, 服务器的时间 t3 是服务端发送数据时, 服务器的时间 t4 是客户端收到数据时, 客户端的时间
+利用这四个时间就可以估算出延迟offset
+client就可以用t3 + offset 来校准时间"><meta property="og:url" content="https://binc4t.github.io/posts/ntp/"><meta property="og:site_name" content="where dream begins!"><meta property="og:title" content="NTP 协议"><meta property="og:description" content="Port Description 123 (UDP) NTP (Network Time Protocol). 什么是NTP协议 NTP(Network Time Protocol) 网络时间协议，运行在123端口上， 用于时间同步
+NTP 通过分级的方式来组织所有节点，从0到15，共15级，0级是最准确的时间设备，从0级同步时间的设备是1级设备，依次类推
+网络上的设备是一个既做服务器又做客户端的模型，在从其他设备获取时间后，其他设备同样可以从你这里获取时间
+具体linux设备上，可以启动ntpd，ntpd通过ntp协议来同步时钟
+NTP协议的原理 NTP原理简单理解起来就是， 假设A想从B初同步时间，那么需要向B发起请求，B把自己的时间发给A，但是因为网络延迟的原因，B的消息传达给A要过一个单程延迟，因此A需要知道单程延迟是多少
+从A和B的两次通信中，其实就可以估算出网络延迟
+借用此处的图片来说明
+其中
+t1 是客户端发送数据时, 客户端的时间 t2 是服务端收到数据时, 服务器的时间 t3 是服务端发送数据时, 服务器的时间 t4 是客户端收到数据时, 客户端的时间
+利用这四个时间就可以估算出延迟offset
+client就可以用t3 + offset 来校准时间"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-06-07T21:59:26+08:00"><meta property="article:modified_time" content="2024-06-07T21:59:26+08:00"><title>NTP 协议 · where dream begins!
+</title><link rel=canonical href=https://binc4t.github.io/posts/ntp/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><meta name=generator content="Hugo 0.127.0"></head><body class="preload-transitions colorscheme-light"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/>where dream begins!
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/reading>Reading</a></li><li class=navigation-item><a class=navigation-link href=/about>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://binc4t.github.io/posts/ntp/>NTP 协议</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2024-06-07T21:59:26+08:00>June 7, 2024
+</time></span><span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+One-minute read</span></div></div></header><div><table><thead><tr><th><strong>Port</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>123 (UDP)</td><td>NTP (Network Time Protocol).</td></tr></tbody></table><h2 id=什么是ntp协议>什么是NTP协议
+<a class=heading-link href=#%e4%bb%80%e4%b9%88%e6%98%afntp%e5%8d%8f%e8%ae%ae><i class="fa fa-link" aria-hidden=true></i></a></h2><p>NTP(Network Time Protocol) 网络时间协议，运行在123端口上， 用于时间同步</p><p>NTP 通过分级的方式来组织所有节点，从0到15，共15级，0级是最准确的时间设备，从0级同步时间的设备是1级设备，依次类推</p><p>网络上的设备是一个既做服务器又做客户端的模型，在从其他设备获取时间后，其他设备同样可以从你这里获取时间</p><p>具体linux设备上，可以启动ntpd，ntpd通过ntp协议来同步时钟</p><h2 id=ntp协议的原理>NTP协议的原理
+<a class=heading-link href=#ntp%e5%8d%8f%e8%ae%ae%e7%9a%84%e5%8e%9f%e7%90%86><i class="fa fa-link" aria-hidden=true></i></a></h2><p>NTP原理简单理解起来就是，
+假设A想从B初同步时间，那么需要向B发起请求，B把自己的时间发给A，但是因为网络延迟的原因，B的消息传达给A要过一个单程延迟，因此A需要知道单程延迟是多少</p><p>从A和B的两次通信中，其实就可以估算出网络延迟</p><p>借用<a href=https://info.support.huawei.com/info-finder/encyclopedia/zh/NTP.html>此处</a>的图片来说明</p><p><img src=https://pic-1258720617.cos.ap-beijing.myqcloud.com/202406072215855.png alt></p><p>其中<br>t1 是客户端发送数据时, 客户端的时间
+t2 是服务端收到数据时, 服务器的时间
+t3 是服务端发送数据时, 服务器的时间
+t4 是客户端收到数据时, 客户端的时间</p><p>利用这四个时间就可以估算出延迟offset<br><img src=https://pic-1258720617.cos.ap-beijing.myqcloud.com/202406072215103.png alt></p><p>client就可以用t3 + offset 来校准时间</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+2024
+bincat
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.9cf2dbf9b6989ef8eae941ffb4231c26d1dc026bca38f1d19fdba50177d8a9ac.js integrity="sha256-nPLb+baYnvjq6UH/tCMcJtHcAmvKOPHRn9ulAXfYqaw="></script></body></html>
