@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  DHCP 协议 · where dream begins!
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="bincat">
+<meta name="description" content="新开了一个支线任务：探索Linux Common Port
+
+本次任务：
+
+
+  
+      
+          端口
+          描述
+      
+  
+  
+      
+          67 (UDP)
+          Used by the DHCP server (Dynamic Host Configuration Protocol).
+      
+      
+          68 (UDP)
+          Used by a DHCP client.
+      
+  
+
+67和68两个端口用于DHCP协议，分别是服务端和客户端
+DHCP是应用层协议，传输层协议使用的是UDP
+
+  什么是DHCP
+  
+    
+    Link to heading
+  
+
+DHCP(Dynamic Host Configurration Protocol)协议，动态路由配置协议，用于动态分配IP
+你走进咖啡厅，用手机连接咖啡厅的公共wifi，此时你的手机将需要被动态分配一个IP，才能用语网络通信，那么这个动态IP由谁负责给你，又是通过什么方式给你呢？
+一般负责动态IP分配的是路由器，而分配动态IP所遵循的协议就是DHCP，下面就是你从连接咖啡厅wifi到分配ip的过程：
+
+当你的手机连接到咖啡厅的公共WiFi网络时,它会向WiFi路由器发送请求,希望获得一个IP地址以接入互联网。
+路由器上运行着DHCP(动态主机配置协议)服务,它负责动态分配IP地址。DHCP服务器会从可用的内网IP地址池中选择一个空闲的IP地址,并将其分配给你的手机。
+DHCP服务器把分配的IP地址、子网掩码、默认网关等信息以DHCP协议的方式发送回你的手机。
+你的手机收到DHCP服务器的响应后,就可以使用这个动态分配的内网IP地址来接入互联网了。
+
+上面获取动态IP的过程就是DHCP
+
+  DHCP 的具体过程
+  
+    
+    Link to heading
+  
+
+简单来说，四次通信即可完成。
+(Discover) client -&gt; servers 广播 Hi，当前广播区域内谁可以给我分配一个动态IP？
+(Offer) server A -&gt; client 单播 我可以给你一个动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息
+(Request) client -&gt; servers 广播 我觉得server A 很不错，我要选定server A提供给我的动态IP地址
+(ACK) server A -&gt; client 单播 这里是你的动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息">
+<meta name="keywords" content="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DHCP 协议">
+  <meta name="twitter:description" content="新开了一个支线任务：探索Linux Common Port
+本次任务： 端口 描述 67 (UDP) Used by the DHCP server (Dynamic Host Configuration Protocol). 68 (UDP) Used by a DHCP client. 67和68两个端口用于DHCP协议，分别是服务端和客户端
+DHCP是应用层协议，传输层协议使用的是UDP
+什么是DHCP Link to heading DHCP(Dynamic Host Configurration Protocol)协议，动态路由配置协议，用于动态分配IP
+你走进咖啡厅，用手机连接咖啡厅的公共wifi，此时你的手机将需要被动态分配一个IP，才能用语网络通信，那么这个动态IP由谁负责给你，又是通过什么方式给你呢？
+一般负责动态IP分配的是路由器，而分配动态IP所遵循的协议就是DHCP，下面就是你从连接咖啡厅wifi到分配ip的过程：
+当你的手机连接到咖啡厅的公共WiFi网络时,它会向WiFi路由器发送请求,希望获得一个IP地址以接入互联网。 路由器上运行着DHCP(动态主机配置协议)服务,它负责动态分配IP地址。DHCP服务器会从可用的内网IP地址池中选择一个空闲的IP地址,并将其分配给你的手机。 DHCP服务器把分配的IP地址、子网掩码、默认网关等信息以DHCP协议的方式发送回你的手机。 你的手机收到DHCP服务器的响应后,就可以使用这个动态分配的内网IP地址来接入互联网了。 上面获取动态IP的过程就是DHCP
+DHCP 的具体过程 Link to heading 简单来说，四次通信即可完成。
+(Discover) client -&gt; servers 广播 Hi，当前广播区域内谁可以给我分配一个动态IP？
+(Offer) server A -&gt; client 单播 我可以给你一个动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息
+(Request) client -&gt; servers 广播 我觉得server A 很不错，我要选定server A提供给我的动态IP地址
+(ACK) server A -&gt; client 单播 这里是你的动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息">
+
+<meta property="og:url" content="http://localhost:1313/posts/dhcp/">
+  <meta property="og:site_name" content="where dream begins!">
+  <meta property="og:title" content="DHCP 协议">
+  <meta property="og:description" content="新开了一个支线任务：探索Linux Common Port
+本次任务： 端口 描述 67 (UDP) Used by the DHCP server (Dynamic Host Configuration Protocol). 68 (UDP) Used by a DHCP client. 67和68两个端口用于DHCP协议，分别是服务端和客户端
+DHCP是应用层协议，传输层协议使用的是UDP
+什么是DHCP Link to heading DHCP(Dynamic Host Configurration Protocol)协议，动态路由配置协议，用于动态分配IP
+你走进咖啡厅，用手机连接咖啡厅的公共wifi，此时你的手机将需要被动态分配一个IP，才能用语网络通信，那么这个动态IP由谁负责给你，又是通过什么方式给你呢？
+一般负责动态IP分配的是路由器，而分配动态IP所遵循的协议就是DHCP，下面就是你从连接咖啡厅wifi到分配ip的过程：
+当你的手机连接到咖啡厅的公共WiFi网络时,它会向WiFi路由器发送请求,希望获得一个IP地址以接入互联网。 路由器上运行着DHCP(动态主机配置协议)服务,它负责动态分配IP地址。DHCP服务器会从可用的内网IP地址池中选择一个空闲的IP地址,并将其分配给你的手机。 DHCP服务器把分配的IP地址、子网掩码、默认网关等信息以DHCP协议的方式发送回你的手机。 你的手机收到DHCP服务器的响应后,就可以使用这个动态分配的内网IP地址来接入互联网了。 上面获取动态IP的过程就是DHCP
+DHCP 的具体过程 Link to heading 简单来说，四次通信即可完成。
+(Discover) client -&gt; servers 广播 Hi，当前广播区域内谁可以给我分配一个动态IP？
+(Offer) server A -&gt; client 单播 我可以给你一个动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息
+(Request) client -&gt; servers 广播 我觉得server A 很不错，我要选定server A提供给我的动态IP地址
+(ACK) server A -&gt; client 单播 这里是你的动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-01T23:07:52+08:00">
+    <meta property="article:modified_time" content="2024-06-01T23:07:52+08:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/dhcp/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      where dream begins!
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/reading">Reading</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/dhcp/">
+              DHCP 协议
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-06-01T23:07:52&#43;08:00">
+                June 1, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>新开了一个支线任务：探索Linux Common Port</p>
+<ul>
+<li>本次任务：</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>端口</th>
+          <th>描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>67 (UDP)</td>
+          <td>Used by the DHCP server (Dynamic Host Configuration Protocol).</td>
+      </tr>
+      <tr>
+          <td>68 (UDP)</td>
+          <td>Used by a DHCP client.</td>
+      </tr>
+  </tbody>
+</table>
+<p>67和68两个端口用于DHCP协议，分别是服务端和客户端<br>
+DHCP是应用层协议，传输层协议使用的是UDP</p>
+<h2 id="什么是dhcp">
+  什么是DHCP
+  <a class="heading-link" href="#%e4%bb%80%e4%b9%88%e6%98%afdhcp">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>DHCP(Dynamic Host Configurration Protocol)协议，动态路由配置协议，用于动态分配IP</p>
+<p>你走进咖啡厅，用手机连接咖啡厅的公共wifi，此时你的手机将需要被动态分配一个IP，才能用语网络通信，那么这个动态IP由谁负责给你，又是通过什么方式给你呢？</p>
+<p>一般负责动态IP分配的是路由器，而分配动态IP所遵循的协议就是DHCP，下面就是你从连接咖啡厅wifi到分配ip的过程：</p>
+<ol>
+<li>当你的手机连接到咖啡厅的公共WiFi网络时,它会向WiFi路由器发送请求,希望获得一个IP地址以接入互联网。</li>
+<li>路由器上运行着DHCP(动态主机配置协议)服务,它负责动态分配IP地址。DHCP服务器会从可用的内网IP地址池中选择一个空闲的IP地址,并将其分配给你的手机。</li>
+<li>DHCP服务器把分配的IP地址、子网掩码、默认网关等信息以DHCP协议的方式发送回你的手机。</li>
+<li>你的手机收到DHCP服务器的响应后,就可以使用这个动态分配的内网IP地址来接入互联网了。</li>
+</ol>
+<p>上面获取动态IP的过程就是DHCP</p>
+<h2 id="dhcp-的具体过程">
+  DHCP 的具体过程
+  <a class="heading-link" href="#dhcp-%e7%9a%84%e5%85%b7%e4%bd%93%e8%bf%87%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>简单来说，四次通信即可完成。</p>
+<p>(Discover) client -&gt; servers 广播 Hi，当前广播区域内谁可以给我分配一个动态IP？<br>
+(Offer) server A -&gt; client 单播 我可以给你一个动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息<br>
+(Request) client -&gt; servers 广播 我觉得server A 很不错，我要选定server A提供给我的动态IP地址<br>
+(ACK) server A -&gt; client 单播 这里是你的动态IP地址！你的地址是xxx，子网掩码是xxx，dns服务器是xxx，以及其他有用的信息</p>
+<h2 id="为什么dhcp需要四次通信">
+  为什么DHCP需要四次通信
+  <a class="heading-link" href="#%e4%b8%ba%e4%bb%80%e4%b9%88dhcp%e9%9c%80%e8%a6%81%e5%9b%9b%e6%ac%a1%e9%80%9a%e4%bf%a1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>可以支持多个DHCP服务器的情况，当设备进入陌生网络，并不知道其中有几个DHCP服务器，只能<strong>广播</strong>发送一个Discover来表明需求，这时候可能收到多个DHCP服务器的OFFER，需要从中选定一个，还是<strong>广播</strong>形式，同时也能告知其他DHCP服务器你选择了其中哪一个OFFER</p>
+<p>就像毕业时你在论坛上吐槽说：”老天赐我一个OFFER吧“，然后Google，Meta，X等多家企业纷纷像你投来橄榄枝，你纠结一番决定去Google，然后在论坛上告诉各大公司，你们的OFFER婉拒了哈，去Google了！（纯属想🍑。。。）</p>
+<h2 id="为什么有时dhcp只要两次通信">
+  为什么有时DHCP只要两次通信
+  <a class="heading-link" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%9c%89%e6%97%b6dhcp%e5%8f%aa%e8%a6%81%e4%b8%a4%e6%ac%a1%e9%80%9a%e4%bf%a1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>当我用wireshark抓包，关闭并重新连接电脑的wifi时，发现只有后两个步骤，也就是request和ack，可能是因为电脑已经知道DHCP server的地址，所以discover请求被省略</p>
+<p>简单来说就是客户端已经有了一些DHCP服务的上下文，不需要再重新广播去Discover一个DHCP服务器</p>
+<p><img src="https://pic-1258720617.cos.ap-beijing.myqcloud.com/202405290004184.png" alt=""></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     bincat 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

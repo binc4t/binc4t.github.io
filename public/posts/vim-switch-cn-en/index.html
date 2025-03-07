@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  使用karabiner实现vim的中英文输入法丝滑切换 · where dream begins!
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="bincat">
+<meta name="description" content="#vim
+
+  背景
+  
+    
+    Link to heading
+  
+
+vim从编辑模式退出到普通模式下的时候，需要手动切换到英文输入法，其他编辑器的vim模式同样存在此问题，我想在vim退出编辑模式时自动切换为英文输入法
+实现这个功能有两个思路：
+
+vim插件
+修改键盘映射
+vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器的vim模式下使用
+
+这里采用karabiner修改键位映射来实现，karabiner是一个很方便的键位修改软件，我一直在使用，解决此问题的思路是：修改ESC的键盘映射，实现在按下ESC的同时，修改输入法为英文
+
+  如何实现
+  
+    
+    Link to heading
+  
+
+karabiner 允许用户通过json的形式自定义键位映射，点击下面红框部分，可以通过一段json来自定义键位的行为
+
+下面是实现该功能的json配置，其含义是：
+在当前输入法不是英文的前提下，按下ESC时，会先按下ESC，同时把输入法切换为英文
+这段json的语法是karabiner的json配置语法，可以在karabiner官网找到详细的karabiner json语法介绍，语法还是比较直观的
+{
+    &#34;description&#34;: &#34;ESC: ESC and language to en&#34;,
+    &#34;manipulators&#34;: [
+        {
+            &#34;type&#34;: &#34;basic&#34;,
+            &#34;conditions&#34;: [
+                {
+                    &#34;type&#34;: &#34;input_source_unless&#34;,
+                    &#34;input_sources&#34;: [
+                        {
+                            &#34;input_source_id&#34;: &#34;^com\\.apple\\.keylayout\\.ABC$&#34;,
+                            &#34;language&#34;: &#34;^en$&#34;
+                        }
+                    ]
+                }
+            ],
+            &#34;from&#34;: {
+                &#34;key_code&#34;: &#34;escape&#34;
+            },
+            &#34;to&#34;: [
+                {
+                    &#34;key_code&#34;: &#34;escape&#34;
+                },
+                {
+                    &#34;select_input_source&#34;: {
+                        &#34;input_source_id&#34;: &#34;^com\\.apple\\.keylayout\\.ABC$&#34;,
+                        &#34;language&#34;: &#34;^en$&#34;
+                    }
+                }
+            ]
+        }
+    ]
+}
+在karabiner启用这段json配置之后，就可以体验丝滑的vim中英文切换了！">
+<meta name="keywords" content="">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="使用karabiner实现vim的中英文输入法丝滑切换">
+  <meta name="twitter:description" content="#vim
+背景 Link to heading vim从编辑模式退出到普通模式下的时候，需要手动切换到英文输入法，其他编辑器的vim模式同样存在此问题，我想在vim退出编辑模式时自动切换为英文输入法
+实现这个功能有两个思路：
+vim插件 修改键盘映射 vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器的vim模式下使用 这里采用karabiner修改键位映射来实现，karabiner是一个很方便的键位修改软件，我一直在使用，解决此问题的思路是：修改ESC的键盘映射，实现在按下ESC的同时，修改输入法为英文
+如何实现 Link to heading karabiner 允许用户通过json的形式自定义键位映射，点击下面红框部分，可以通过一段json来自定义键位的行为 下面是实现该功能的json配置，其含义是： 在当前输入法不是英文的前提下，按下ESC时，会先按下ESC，同时把输入法切换为英文
+这段json的语法是karabiner的json配置语法，可以在karabiner官网找到详细的karabiner json语法介绍，语法还是比较直观的
+{ &#34;description&#34;: &#34;ESC: ESC and language to en&#34;, &#34;manipulators&#34;: [ { &#34;type&#34;: &#34;basic&#34;, &#34;conditions&#34;: [ { &#34;type&#34;: &#34;input_source_unless&#34;, &#34;input_sources&#34;: [ { &#34;input_source_id&#34;: &#34;^com\\.apple\\.keylayout\\.ABC$&#34;, &#34;language&#34;: &#34;^en$&#34; } ] } ], &#34;from&#34;: { &#34;key_code&#34;: &#34;escape&#34; }, &#34;to&#34;: [ { &#34;key_code&#34;: &#34;escape&#34; }, { &#34;select_input_source&#34;: { &#34;input_source_id&#34;: &#34;^com\\.apple\\.keylayout\\.ABC$&#34;, &#34;language&#34;: &#34;^en$&#34; } } ] } ] } 在karabiner启用这段json配置之后，就可以体验丝滑的vim中英文切换了！">
+
+<meta property="og:url" content="http://localhost:1313/posts/vim-switch-cn-en/">
+  <meta property="og:site_name" content="where dream begins!">
+  <meta property="og:title" content="使用karabiner实现vim的中英文输入法丝滑切换">
+  <meta property="og:description" content="#vim
+背景 Link to heading vim从编辑模式退出到普通模式下的时候，需要手动切换到英文输入法，其他编辑器的vim模式同样存在此问题，我想在vim退出编辑模式时自动切换为英文输入法
+实现这个功能有两个思路：
+vim插件 修改键盘映射 vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器的vim模式下使用 这里采用karabiner修改键位映射来实现，karabiner是一个很方便的键位修改软件，我一直在使用，解决此问题的思路是：修改ESC的键盘映射，实现在按下ESC的同时，修改输入法为英文
+如何实现 Link to heading karabiner 允许用户通过json的形式自定义键位映射，点击下面红框部分，可以通过一段json来自定义键位的行为 下面是实现该功能的json配置，其含义是： 在当前输入法不是英文的前提下，按下ESC时，会先按下ESC，同时把输入法切换为英文
+这段json的语法是karabiner的json配置语法，可以在karabiner官网找到详细的karabiner json语法介绍，语法还是比较直观的
+{ &#34;description&#34;: &#34;ESC: ESC and language to en&#34;, &#34;manipulators&#34;: [ { &#34;type&#34;: &#34;basic&#34;, &#34;conditions&#34;: [ { &#34;type&#34;: &#34;input_source_unless&#34;, &#34;input_sources&#34;: [ { &#34;input_source_id&#34;: &#34;^com\\.apple\\.keylayout\\.ABC$&#34;, &#34;language&#34;: &#34;^en$&#34; } ] } ], &#34;from&#34;: { &#34;key_code&#34;: &#34;escape&#34; }, &#34;to&#34;: [ { &#34;key_code&#34;: &#34;escape&#34; }, { &#34;select_input_source&#34;: { &#34;input_source_id&#34;: &#34;^com\\.apple\\.keylayout\\.ABC$&#34;, &#34;language&#34;: &#34;^en$&#34; } } ] } ] } 在karabiner启用这段json配置之后，就可以体验丝滑的vim中英文切换了！">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-02-24T17:56:47+08:00">
+    <meta property="article:modified_time" content="2024-02-24T17:56:47+08:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/vim-switch-cn-en/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      where dream begins!
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/reading">Reading</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/vim-switch-cn-en/">
+              使用karabiner实现vim的中英文输入法丝滑切换
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-02-24T17:56:47&#43;08:00">
+                February 24, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>#vim</p>
+<h2 id="背景">
+  背景
+  <a class="heading-link" href="#%e8%83%8c%e6%99%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>vim从编辑模式退出到普通模式下的时候，需要手动切换到英文输入法，其他编辑器的vim模式同样存在此问题，我想在vim退出编辑模式时自动切换为英文输入法</p>
+<p>实现这个功能有两个思路：</p>
+<ul>
+<li>vim插件</li>
+<li>修改键盘映射
+vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器的vim模式下使用</li>
+</ul>
+<p>这里采用<a href="https://karabiner-elements.pqrs.org/"  class="external-link" target="_blank" rel="noopener">karabiner</a>修改键位映射来实现，karabiner是一个很方便的键位修改软件，我一直在使用，解决此问题的思路是：修改ESC的键盘映射，实现在按下ESC的同时，修改输入法为英文</p>
+<h2 id="如何实现">
+  如何实现
+  <a class="heading-link" href="#%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>karabiner 允许用户通过json的形式自定义键位映射，点击下面红框部分，可以通过一段json来自定义键位的行为
+<img src="https://pic-1258720617.cos.ap-beijing.myqcloud.com/20240224174646.png" alt=""></p>
+<p>下面是实现该功能的json配置，其含义是：
+在当前输入法不是英文的前提下，按下ESC时，会先按下ESC，同时把输入法切换为英文</p>
+<p>这段json的语法是karabiner的json配置语法，可以在karabiner官网找到详细的<a href="https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition"  class="external-link" target="_blank" rel="noopener">karabiner json语法介绍</a>，语法还是比较直观的</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;description&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;ESC: ESC and language to en&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;manipulators&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;type&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;basic&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;conditions&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#0550ae">&#34;type&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;input_source_unless&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#0550ae">&#34;input_sources&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#0550ae">&#34;input_source_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;^com\\.apple\\.keylayout\\.ABC$&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#0550ae">&#34;language&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;^en$&#34;</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;from&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#0550ae">&#34;key_code&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;escape&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;to&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#0550ae">&#34;key_code&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;escape&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#0550ae">&#34;select_input_source&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#0550ae">&#34;input_source_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;^com\\.apple\\.keylayout\\.ABC$&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>                        <span style="color:#0550ae">&#34;language&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;^en$&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>在karabiner启用这段json配置之后，就可以体验丝滑的vim中英文切换了！</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     bincat 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
