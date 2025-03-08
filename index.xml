@@ -446,45 +446,7 @@ for range 是按照rune来遍历&lt;/p></description></item><item><title>学习 
 #232 用栈实现队列&lt;br>
 #20 有效的括号&lt;br>
 &lt;strong>链表&lt;/strong>&lt;br>
-#206 反转链表&lt;/p></description></item><item><title>2024 阅读记录</title><link>https://binc4t.github.io/reading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://binc4t.github.io/reading/</guid><description>&lt;h1 id="2024-读书记录">
- 2024 读书记录
- &lt;a class="heading-link" href="#2024-%e8%af%bb%e4%b9%a6%e8%ae%b0%e5%bd%95">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="在读">
- 在读
- &lt;a class="heading-link" href="#%e5%9c%a8%e8%af%bb">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;h3 id="技术">
- 技术
- &lt;a class="heading-link" href="#%e6%8a%80%e6%9c%af">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>&lt;a href="https://book.douban.com/subject/35720728/" class="external-link" target="_blank" rel="noopener">《go语言精进之路》&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://kaisery.github.io/trpl-zh-cn/" class="external-link" target="_blank" rel="noopener">《rust程序设计语言》&lt;/a>&lt;/p>
-&lt;h3 id="非技术">
- 非技术
- &lt;a class="heading-link" href="#%e9%9d%9e%e6%8a%80%e6%9c%af">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>&lt;a href="https://book.douban.com/subject/27079479/" class="external-link" target="_blank" rel="noopener">《南方高速》&lt;/a> 科塔萨尔的短篇小说集&lt;/p>
-&lt;h2 id="读完">
- 读完
- &lt;a class="heading-link" href="#%e8%af%bb%e5%ae%8c">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>&lt;a href="https://book.douban.com/subject/36457109/" class="external-link" target="_blank" rel="noopener">《程序员的readme》&lt;/a> 非常全面且精炼。涉及代码编写，测试，团队协作，技术评审，职业规划和晋升等等方面。适合每一个新手程序员阅读。&lt;/p></description></item><item><title>关于我</title><link>https://binc4t.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://binc4t.github.io/about/</guid><description>&lt;p>我是 BinCat，26岁，想成为一个 Web3 Builder，感谢您的访问！&lt;/p>
+#206 反转链表&lt;/p></description></item><item><title>关于我</title><link>https://binc4t.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://binc4t.github.io/about/</guid><description>&lt;p>我是 BinCat，26岁，想成为一个 Web3 Builder，感谢您的访问！&lt;/p>
 &lt;p>&lt;a href="https://github.com/binc4t">&lt;img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub 图标" style="width: 25px; height: 25px;"/> binc4t&lt;/a>
  | 
 &lt;a href="https://x.com/binc4t">&lt;img src="https://yyypics.oss-cn-beijing.aliyuncs.com/logo-black.png" alt="X 图标" style="width: 20px; height: 20px;"/> binc4t&lt;/a>&lt;/p></description></item><item><title>友链</title><link>https://binc4t.github.io/friend/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://binc4t.github.io/friend/</guid><description>&lt;div class="friends-list">
@@ -522,4 +484,33 @@ for range 是按照rune来遍历&lt;/p></description></item><item><title>学习 
 .friends-list span {
  color: #666;
 }
-&lt;/style></description></item></channel></rss>
+&lt;/style></description></item><item><title>读书记录 和一些杂七杂八</title><link>https://binc4t.github.io/reading/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://binc4t.github.io/reading/</guid><description>&lt;h2 id="2025">
+ 2025
+ &lt;a class="heading-link" href="#2025">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>在读&lt;br>
+&lt;a href="https://book.douban.com/subject/26822106/" class="external-link" target="_blank" rel="noopener">《图解密码技术》&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/27093851/" class="external-link" target="_blank" rel="noopener">《以交易为生》&lt;/a>&lt;/p>
+&lt;p>有时间的话再重温一下《深入理解以太坊》&lt;/p>
+&lt;h2 id="2024">
+ 2024
+ &lt;a class="heading-link" href="#2024">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>&lt;a href="https://book.douban.com/subject/36457109/" class="external-link" target="_blank" rel="noopener">《程序员的readme》&lt;/a> 非常全面且精炼。涉及代码编写，测试，团队协作，技术评审，职业规划和晋升等等方面。适合每一个新手程序员阅读。&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/35690920/" class="external-link" target="_blank" rel="noopener">《海龟交易法则》&lt;/a> 读了一部分，建立交易系统，不要让心理因素影响自己。&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/27079479/" class="external-link" target="_blank" rel="noopener">《南方高速》&lt;/a> 科塔萨尔的短篇小说集&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/35650456/" class="external-link" target="_blank" rel="noopener">《跨越不可能》&lt;/a> 坚毅力，学习力，心流体验&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/36044253/" class="external-link" target="_blank" rel="noopener">《软技能 第二版》&lt;/a> 基本是遛弯听完的， 关于创业和自我营销&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/6060455/" class="external-link" target="_blank" rel="noopener">《浮世画家》&lt;/a> 石黑一雄作品，因为诺奖慕名而读，以主人公小野的视角展开叙事，描述了浮世画家小野退休后和他的女儿、外孙之间的各种生活画面，穿插大量回忆，读的时候觉得故事有些过于平淡，不太有持续阅读的兴趣，另外对于女性的态度、对于战争的态度也让人读起来不太愉悦&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/30347596/" class="external-link" target="_blank" rel="noopener">《对赌》&lt;/a> 德扑职业选手写成，纯粹的决策教程，如何做出好决策，我认为比起成功人士，德扑职业选手的决策建议更具参考价值，因为成功是个开放题，成功人士的回忆录不包含决策的全貌，而且往往对运气轻描淡写，或者是带有谦虚的意味。德扑牌桌上，纯粹到没有任何场外因素，针对有限的知识，做出最大可能造成好结果的决策，避免无法承受的失败。&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/36636224/" class="external-link" target="_blank" rel="noopener">《打造第二大脑》&lt;/a> 优秀信息管理者的三个习惯：项目清单，总结复盘，处处留意，另外也提到了广为人知的 PARA，CODE 信息整理方法&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/35324326/" class="external-link" target="_blank" rel="noopener">《金阁寺》&lt;/a> 不太理解主人公那种把美好的东西毁掉的冲动，但是题外话，金阁寺真的很美，有兴趣过一次，金闪闪的外表令人难忘&lt;/p>
+&lt;p>&lt;a href="https://book.douban.com/subject/35449832/" class="external-link" target="_blank" rel="noopener">《最小阻力之路》&lt;/a> 人总是沿着最小阻力方向前进，利用这个原理，建立系统让自己朝着希望的方向前进&lt;/p>
+&lt;p>&lt;a href="https://store.steampowered.com/app/638230/Journey/" class="external-link" target="_blank" rel="noopener">Journey&lt;/a> steam上一款游戏，与其说是游戏，更像是一场电影，画面、配乐都很艺术，花9块钱和105分钟体验的浪漫旅程。&lt;/p>
+&lt;p>&lt;img src="https://pic-1258720617.cos.ap-beijing.myqcloud.com/20240415224454.png" alt="">&lt;/p></description></item></channel></rss>
