@@ -2,7 +2,7 @@
 title: "关于我"
 ---
 
-Hi！我是 BinCat，26岁，我对 Web3 感兴趣 ，感谢您的访问！
+Hi！我是 BinCat，26岁，我对 Web3/Crypto/Blockchain 感兴趣 ，感谢您的访问！
 
 <a href="https://github.com/binc4t"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub 图标" style="width: 25px; height: 25px;"/> binc4t</a>
 &nbsp;|&nbsp;
