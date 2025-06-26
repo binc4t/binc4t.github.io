@@ -44,6 +44,10 @@ style = 'github' # 样式参考 https://swapoff.org/chroma/playground
   weight = 3
   url = "friend"
 [[menu.main]]
+  name = "Whisper"
+  weight = 3
+  url = "whisper"
+[[menu.main]]
   name = "About"
   weight = 4
   url = "about"
