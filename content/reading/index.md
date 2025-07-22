@@ -8,6 +8,8 @@ title: "读书记录 和一些杂七杂八"
 
 [《以交易为生》](https://book.douban.com/subject/27093851/)
 
+[《区块链架构与实现 Cosmos详解》](https://book.douban.com/subject/35571980/)
+
 有时间的话再重温一下《深入理解以太坊》
 
 
