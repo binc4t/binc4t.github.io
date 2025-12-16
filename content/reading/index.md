@@ -5,6 +5,8 @@ title: "读书记录 和一些杂七杂八"
 ## 2025
 在读  
 
+[《数据密集型应用系统设计》](https://book.douban.com/subject/30329536/)
+
 [《CUDA 编程：基础与实战》](https://book.douban.com/subject/35252459/)
 
 [《图解密码技术》](https://book.douban.com/subject/26822106/)
