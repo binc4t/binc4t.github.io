@@ -49,7 +49,7 @@ One-minute read</span></div></div></header><div class=post-content><h1 id=参考
 <span class=sr-only>Link to heading</span></a></h1><h2 id=一些记录>一些记录
 <a class=heading-link href=#%e4%b8%80%e4%ba%9b%e8%ae%b0%e5%bd%95><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p><code>3f+1</code> is the minimum number of replicas that allow an asynchronous system to provide the safety and liveness properties when up to <code>f</code> replicas are faulty</p><p>在一个由<code>3f+1</code>个节点构成的系统中，最多有<code>f</code>个恶意节点，才能保证系统的safty和liveness</p><p>This many replicas are needed because it must be possible to proceed after communicating with <code>n-f</code> replicas, since <code>f</code> replicas might be faulty and not responding. However, it is possible that the <code>f</code> replicas that did not respond are not faulty and, therefore, <code>f</code> of those that responded might be faulty. Even so, there must still be enough responses that those from non-faulty replicas outnumber those from faulty ones, i.e., <code>n-2f</code>. Therefore <code>n > 3f</code>.</p><p>解释了<code>3f</code>的原因</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
-2025
+2026
 bincat
 ·
 Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>

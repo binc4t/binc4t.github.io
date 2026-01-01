@@ -83,7 +83,7 @@ vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器�
 <a class=heading-link href=#%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>karabiner 允许用户通过json的形式自定义键位映射，点击下面红框部分，可以通过一段json来自定义键位的行为
 <img src=https://pic-1258720617.cos.ap-beijing.myqcloud.com/20240224174646.png alt></p><p>下面是实现该功能的json配置，其含义是：
-在当前输入法不是英文的前提下，按下ESC时，会先按下ESC，同时把输入法切换为英文</p><p>这段json的语法是karabiner的json配置语法，可以在karabiner官网找到详细的<a href=https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition class=external-link target=_blank rel=noopener>karabiner json语法介绍</a>，语法还是比较直观的</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#1f2328>{</span>
+在当前输入法不是英文的前提下，按下ESC时，会先按下ESC，同时把输入法切换为英文</p><p>这段json的语法是karabiner的json配置语法，可以在karabiner官网找到详细的<a href=https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition class=external-link target=_blank rel=noopener>karabiner json语法介绍</a>，语法还是比较直观的</p><div class=highlight><pre tabindex=0 style=background-color:#f7f7f7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#1f2328>{</span>
 </span></span><span style=display:flex><span>    <span style=color:#0550ae>&#34;description&#34;</span><span style=color:#1f2328>:</span> <span style=color:#0a3069>&#34;ESC: ESC and language to en&#34;</span><span style=color:#1f2328>,</span>
 </span></span><span style=display:flex><span>    <span style=color:#0550ae>&#34;manipulators&#34;</span><span style=color:#1f2328>:</span> <span style=color:#1f2328>[</span>
 </span></span><span style=display:flex><span>        <span style=color:#1f2328>{</span>
@@ -117,7 +117,7 @@ vim插件的办法这里不做介绍，因为vim插件无法在其他编辑器�
 </span></span><span style=display:flex><span>    <span style=color:#1f2328>]</span>
 </span></span><span style=display:flex><span><span style=color:#1f2328>}</span>
 </span></span></code></pre></div><p>在karabiner启用这段json配置之后，就可以体验丝滑的vim中英文切换了！</p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
-2025
+2026
 bincat
 ·
 Powered by <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/ target=_blank rel=noopener>Coder</a>.</section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
