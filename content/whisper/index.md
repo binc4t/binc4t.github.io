@@ -2,6 +2,10 @@
 title: "流水账"
 ---
 
+### 2026年 1月12日 星期一
+人生轨迹发生改变  
+![](https://pic-1258720617.cos.ap-beijing.myqcloud.com/IMG_1969.jpg)
+
 ### 2025年 11月30日 星期日
 梦开始的地方  
 ![](https://pic-1258720617.cos.ap-beijing.myqcloud.com/202511300621254.png)
